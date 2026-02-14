@@ -10,8 +10,7 @@
   },
   "autoload": {
     "psr-4": {
-      "CFXP\\Core\\": "src/",
-      "CFXP\\Contracts\\": "src/Contracts/"
+      "Denosys\\\\Contracts\\\\": "src/"
     }
   },
   "config": {

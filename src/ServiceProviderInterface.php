@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core;
+namespace Denosys\Contracts;
 
-use CFXP\Core\Container\ContainerInterface;
+use Denosys\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 
 /**
@@ -19,7 +19,7 @@ use Psr\EventDispatcher\EventDispatcherInterface;
  * 2. boot() - Perform any actions after ALL providers have been registered.
  *             Safe to resolve other services here.
  */
-interface ServiceProviderInterface extends \CFXP\Contracts\ServiceProviderInterface
+interface ServiceProviderInterface extends \Denosys\Contracts\ServiceProviderInterface
 {
     /**
      * Register bindings and services into the container.

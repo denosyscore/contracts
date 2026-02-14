@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core;
+namespace Denosys\Contracts;
 
 /**
  * Deferrable Provider Interface.
@@ -26,7 +26,7 @@ namespace CFXP\Core;
  *     }
  * }
  */
-interface DeferrableProviderInterface extends \CFXP\Contracts\DeferrableProviderInterface
+interface DeferrableProviderInterface extends \Denosys\Contracts\DeferrableProviderInterface
 {
     /**
      * Get the services provided by the provider.
