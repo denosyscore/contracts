@@ -19,7 +19,7 @@ use Psr\EventDispatcher\EventDispatcherInterface;
  * 2. boot() - Perform any actions after ALL providers have been registered.
  *             Safe to resolve other services here.
  */
-interface ServiceProviderInterface extends \Denosys\Contracts\ServiceProviderInterface
+interface ServiceProviderInterface
 {
     /**
      * Register bindings and services into the container.

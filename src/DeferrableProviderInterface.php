@@ -26,7 +26,7 @@ namespace Denosys\Contracts;
  *     }
  * }
  */
-interface DeferrableProviderInterface extends \Denosys\Contracts\DeferrableProviderInterface
+interface DeferrableProviderInterface
 {
     /**
      * Get the services provided by the provider.
