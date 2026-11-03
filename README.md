@@ -15,7 +15,12 @@ composer require denosyscore/contracts
 - src/ServiceProviderInterface.php
 - src/DeferrableProviderInterface.php
 - src/Container/*Interface.php
+- src/Config/ConfigurationReaderInterface.php
 - src/Contracts/* (extracted contracts namespace)
+
+`ConfigurationReaderInterface` exposes `get(string $key, mixed $default = null): mixed`
+for packages that only read settings. A framework or standalone host supplies an
+implementation through its container.
 
 ## Development
 
