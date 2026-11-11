@@ -2,13 +2,51 @@
 
 Core framework contracts and interfaces
 
-## Status
-
-Initial extraction snapshot from denosyscore monorepo as of 2026-02-14.
-
 ## Installation
 
+```bash
 composer require denosyscore/contracts
+```
+
+## Quick start
+
+Interfaces shared by DenoSys packages. A package that only reads settings type-hints `ConfigurationReaderInterface`, and the host application supplies an implementation.
+
+<!-- quickstart -->
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Denosys\Contracts\Config\ConfigurationReaderInterface;
+
+// Packages type-hint the read-only contract; the host decides where settings live.
+final class ArrayConfiguration implements ConfigurationReaderInterface
+{
+    public function __construct(private array $settings) {}
+
+    public function get(string $key, mixed $default = null): mixed
+    {
+        $value = $this->settings;
+        foreach (explode('.', $key) as $segment) {
+            if (!is_array($value) || !array_key_exists($segment, $value)) {
+                return $default;
+            }
+            $value = $value[$segment];
+        }
+
+        return $value;
+    }
+}
+
+function cacheDirectory(ConfigurationReaderInterface $config): string
+{
+    return $config->get('cache.path', '/tmp/cache');
+}
+
+echo cacheDirectory(new ArrayConfiguration(['cache' => ['path' => '/var/cache/app']])), "\n";
+// /var/cache/app
+```
 
 ## Included Modules
 
