@@ -7,7 +7,7 @@ namespace Denosys\Contracts\Config;
 /**
  * Read a named configuration value without depending on a configuration loader.
  */
-interface ConfigurationReaderInterface
+interface ConfigReader
 {
     public function get(string $key, mixed $default = null): mixed;
 }
